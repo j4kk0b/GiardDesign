@@ -38,7 +38,29 @@ window.onload = () => {
 const openBtn = document.querySelector(".section-projects__gallery-btn");
 const gallery = document.querySelector(".section-projects__gallery");
 
+let btnCaptionChange = false;
 openBtn.addEventListener("click", () => {
-  gallery.classList.remove("gallery-hidden");
-  gallery.classList.add("gallery-active");
+  btnCaptionChange = !btnCaptionChange;
+
+  if (
+    (openBtn.innerHTML = btnCaptionChange
+      ? "Zwiń <span>&uarr;</span>"
+      : "Rozwiń <span>&darr;</span>")
+  );
+
+  if (gallery.classList.contains("gallery-active")) {
+    gallery.classList.add("gallery-hide");
+    setTimeout(() => {
+      gallery.classList.remove("gallery-hide");
+    }, 1000);
+  }
+  gallery.classList.toggle("gallery-active");
+
+  if (!openBtn.classList.contains("move-gallery-btn")) {
+    openBtn.classList.add("move-gallery-btn");
+  } else {
+    setTimeout(() => {
+      openBtn.classList.remove("move-gallery-btn");
+    }, 500);
+  }
 });
