@@ -12,3 +12,9 @@ document.addEventListener("keydown", (e) => {
     searchBar.classList.remove("active-custom");
   }
 });
+
+// update year in footer
+const yearContainer = document.querySelector(".current-year");
+const currYear = new Date().getFullYear();
+
+yearContainer.innerHTML = currYear;

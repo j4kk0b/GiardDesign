@@ -2,6 +2,10 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 /* =================== */
 /* ==== VARIABLES ====*/
 /* =================== */
@@ -420,6 +424,93 @@ nav.navbar {
   box-shadow: 0 0 4px #00000025;
 }
 
+/* ============ */
+/* == FOOTER == */
+/* ============ */
+
+.footer {
+  background-color: var(--base-dark);
+  padding: 8rem 0;
+}
+
+.footer * {
+  color: var(--base-light);
+  font-size: 1.6rem;
+}
+
+.footer-top {
+  gap: 6.2rem;
+}
+
+.footer-header__cta {
+  gap: 2.4rem;
+}
+
+.footer-header__cta a:link,
+.footer-header__cta a:visited {
+  text-decoration: none;
+  color: var(--base-light);
+  padding: 1.2rem 2.4rem 1.4rem 2.4rem;
+  background-color: var(--base-green);
+  display: inline-block;
+  border-radius: 20rem;
+
+  transition: 0.3s ease;
+}
+
+.footer-header__cta a:hover {
+  background-color: var(--base-green-light);
+  transform: scale(1.02);
+}
+
+.footer-header__cta a:active {
+  background-color: var(--base-green-dark);
+  transform: scale(1.01);
+}
+
+.footer-separator {
+  background-color: var(--base-light);
+  height: 1px;
+}
+
+.footer-nav ul {
+  gap: 4.8rem;
+}
+
+.footer-nav ul li a:link,
+.footer-nav ul li a:visited,
+.footer-nav__contact a:link,
+.footer-nav__contact a:visited {
+  color: var(--base-light);
+  font-size: 1.6rem;
+  padding-bottom: 0.3rem;
+
+  transition: 0.3s ease;
+}
+
+.footer-nav ul li a:hover,
+.footer-nav__contact a:hover {
+  border-bottom: 1px solid var(--base-light);
+}
+
+.footer-nav ul li a:active,
+.footer-nav__contact a:active {
+  color: #f5f0ec96;
+  border-color: #f5f0ec96;
+}
+
+.footer-nav__contact {
+  gap: 4.8rem;
+}
+
+.footer-credentials {
+  margin-top: 12rem;
+}
+
+.footer-credentials__logo {
+  gap: 1.6rem;
+}
+
 /* 1200px */
 @media only screen and (max-width: 75em) {
   .section-about .container .row {
@@ -474,6 +565,14 @@ nav.navbar {
 
   .section-instagram .container .row {
     gap: 8rem;
+  }
+
+  .footer-nav {
+    gap: 5rem;
+  }
+
+  .footer-nav__contact {
+    gap: 0;
   }
 }
 
