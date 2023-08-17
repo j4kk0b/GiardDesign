@@ -536,6 +536,96 @@ nav.navbar {
     z-index: 0;
   }
 }
+
+/* =============== */
+/* ==== POPUP ==== */
+/* =============== */
+
+.popup-container .popup {
+  z-index: 30;
+}
+
+.popup-container .popup,
+.popup-container .layout {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popup-container .layout {
+  z-index: 25;
+  background-color: #000000dc;
+  width: 100vw;
+  height: 102vh;
+}
+
+.popup-container .popup {
+  height: 90vh;
+  width: auto;
+}
+
+.popup-img-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.popup-img-container img {
+  height: 100%;
+}
+
+.btn-close-popup {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  outline: none;
+  border: none;
+
+  font-size: 2rem;
+  padding: 1rem 4rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  background-color: #fff;
+  color: var(--base-dark);
+  transition: 0.3s ease;
+}
+
+.btn-close-popup:hover {
+  background-color: var(--base-yellowish);
+}
+
+.popup-container .popup {
+  animation: loadPopup 1s forwards;
+}
+
+.popup-layout {
+  animation: loadLayout 0.5s forwards;
+}
+
+@keyframes loadPopup {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes loadLayout {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 /* ======================= */
 /* == SECTION INSTAGRAM == */
 /* ======================= */
@@ -697,12 +787,10 @@ nav.navbar {
 
 /* 1085px */
 @media only screen and (max-width: 67.8125em) {
-  /* TITLE */
   .section-header h1 {
     font-size: 5rem;
   }
 
-  /* CAROUSEL */
   .carousel-container {
     width: 55vw;
     max-width: 55vw;
@@ -715,7 +803,6 @@ nav.navbar {
 
 /* 992px */
 @media only screen and (max-width: 62em) {
-  /* CAROUSEL */
   .carousel-container {
     width: 80vw;
     max-width: 80vw;
@@ -788,7 +875,6 @@ nav.navbar {
 
 /* 416px */
 @media only screen and (max-width: 26em) {
-  /* TITLE */
   .section-header h1,
   .section-offers__info-title,
   .section-about__info-title,
@@ -797,7 +883,6 @@ nav.navbar {
     line-height: 5rem;
   }
 
-  /* PARAGRAPH UNDER TITLE */
   .section-header p {
     max-width: 100%;
   }
