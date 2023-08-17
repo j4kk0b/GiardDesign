@@ -7,7 +7,7 @@ searchToggler.addEventListener("click", () => {
 });
 
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
+  if (e.key === "Escape" || e.key === "Enter") {
     searchBar.classList.add("hidden-custom");
     searchBar.classList.remove("active-custom");
   }
@@ -18,3 +18,27 @@ const yearContainer = document.querySelector(".current-year");
 const currYear = new Date().getFullYear();
 
 yearContainer.innerHTML = currYear;
+
+// macy initalizaion - gallery
+window.onload = () => {
+  const macy = Macy({
+    container: ".grid",
+    trueOrder: false,
+    waitForImages: false,
+    margin: 30,
+    columns: 3,
+    breakAt: {
+      900: 2,
+      500: 1,
+    },
+  });
+};
+
+// Opening gallery
+const openBtn = document.querySelector(".section-projects__gallery-btn");
+const gallery = document.querySelector(".section-projects__gallery");
+
+openBtn.addEventListener("click", () => {
+  gallery.classList.remove("gallery-hidden");
+  gallery.classList.add("gallery-active");
+});
