@@ -366,6 +366,60 @@ nav.navbar {
   width: 100%;
 }
 
+/* ======================= */
+/* == SECTION INSTAGRAM == */
+/* ======================= */
+
+.section-instagram {
+  margin: 6rem 0;
+}
+
+.section-instagram .container .row .col-main {
+  background-color: var(--base-green);
+  padding: 12rem 11rem;
+}
+
+.section-instagram__info h2 {
+  letter-spacing: -2px;
+  font-size: 4rem;
+}
+
+.section-instagram__info h2,
+.section-instagram__info h2 span {
+  line-height: 120%;
+  color: var(--base-light);
+}
+
+.section-instagram__info h2 span {
+  letter-spacing: 1px;
+}
+
+.section-instagram__cta p {
+  line-height: 150%;
+  letter-spacing: -1%;
+  font-size: 1.6rem;
+  color: var(--base-light);
+  margin-bottom: 2.4rem;
+}
+
+.section-instagram__cta a:link,
+.section-instagram__cta a:visited {
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--base-light);
+  color: var(--base-green);
+  padding: 1rem 2.4rem 1.2rem 2.4rem;
+  border-radius: 20rem;
+  font-size: 1.6rem;
+
+  transition: 0.3s ease;
+}
+
+.section-instagram__cta a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 4px #00000025;
+}
+
 /* 1200px */
 @media only screen and (max-width: 75em) {
   .section-about .container .row {
@@ -377,6 +431,10 @@ nav.navbar {
     max-width: 60vw;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .section-about__img img {
+    border-radius: 1.6rem;
   }
 }
 
@@ -405,10 +463,24 @@ nav.navbar {
     width: 80vw;
     max-width: 80vw;
     margin: 0 auto;
+
+    border-radius: 1.6rem 1.6rem 0 1.6rem;
+    overflow: hidden;
   }
 
   .carousel-controls-container {
     right: 0px;
+  }
+
+  .section-instagram .container .row {
+    gap: 8rem;
+  }
+}
+
+/* 750px */
+@media only screen and (max-width: 46.875em) {
+  .section-instagram__info h2 {
+    font-size: 3rem;
   }
 }
 
@@ -417,6 +489,13 @@ nav.navbar {
   .section-about__img {
     width: 80vw;
     max-width: 80vw;
+  }
+}
+
+/* 576px */
+@media only screen and (max-width: 36em) {
+  .section-instagram .container .row .col-main {
+    padding: 6rem 2rem;
   }
 }
 
