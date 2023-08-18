@@ -24,7 +24,7 @@ yearContainer.innerHTML = currYear;
 window.onload = () => {
   const macy = Macy({
     container: ".grid",
-    trueOrder: false,
+    trueOrder: true,
     waitForImages: false,
     margin: 30,
     columns: 5,
@@ -71,24 +71,36 @@ openBtn.addEventListener("click", () => {
 class Popup {
   layout;
   closeBtn;
+  nextBtn;
+  prevBtn;
   imgs;
+  currImgIndex;
 
   constructor() {
     this.imgs = document.querySelectorAll(".img-gallery");
   }
 
-  createPopup(src, alt) {
-    const markup = this.createMarkup(src, alt);
+  createPopup() {
+    const markup = this.createMarkup(
+      this.imgs[this.currImgIndex].src,
+      this.imgs[this.currImgIndex].alt
+    );
     document.querySelector("body").insertAdjacentHTML("afterbegin", markup);
+    this.isPopup = true;
     this.addEventListenerToRemovePopup();
+    this.addEventListenersToControls();
   }
 
   createMarkup(src, alt) {
     return `<div class="popup-container">
       <div class="popup">
         <div class="popup-img-container">
-          <img src="${src}" alt="${alt}" />
-          <button class="btn-close-popup">Schowaj</button>
+          <img class="popup-img" src="${src}" alt="${alt}" />
+          <div class="gallery-controls">
+            <button class="btn-gallery-prev"><img src="assets/slides/arrow-left.png" /></button>
+            <button class="btn-close-popup">Schowaj</button>
+            <button class="btn-gallery-next"><img src="assets/slides/arrow-right.png" /></button>
+          </div>
         </div>
       </div>
       <div class="popup-layout layout"></div>
@@ -99,6 +111,15 @@ class Popup {
     document.querySelector(".popup-container").remove();
   }
 
+  changeImgInPopUp() {
+    const img = document.querySelector(".popup-img");
+
+    img.src = `assets/gallery/img${this.currImgIndex + 1}-min.webp`;
+    img.alt = `Zdjęcie ${
+      this.currImgIndex + 1
+    } przedstawiające realizacje ogrodu`;
+  }
+
   addEventListenerToRemovePopup() {
     this.closeBtn = document.querySelector(".btn-close-popup");
     this.layout = document.querySelector(".popup-layout");
@@ -107,10 +128,36 @@ class Popup {
     this.layout.addEventListener("click", this.removePopup);
   }
 
+  addEventListenersToControls() {
+    this.prevBtn = document.querySelector(".btn-gallery-prev");
+    this.nextBtn = document.querySelector(".btn-gallery-next");
+
+    this.prevBtn.addEventListener("click", () => {
+      this.changeImgInGallery(-1);
+    });
+    this.nextBtn.addEventListener("click", () => {
+      this.changeImgInGallery(1);
+    });
+  }
+
+  changeImgInGallery(position) {
+    if (this.currImgIndex + position === this.imgs.length)
+      this.currImgIndex = 0;
+
+    if (this.currImgIndex + position === -1)
+      this.currImgIndex = this.imgs.length;
+
+    if (position === 1) this.currImgIndex += 1;
+    else this.currImgIndex -= 1;
+
+    this.changeImgInPopUp();
+  }
+
   addEventListeners() {
-    this.imgs.forEach((img) => {
+    this.imgs.forEach((img, i) => {
       img.addEventListener("click", () => {
-        this.createPopup(img.src, img.alt);
+        this.currImgIndex = i;
+        this.createPopup();
       });
     });
   }

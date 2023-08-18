@@ -541,60 +541,76 @@ nav.navbar {
 /* ==== POPUP ==== */
 /* =============== */
 
+.popup-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 28;
+
+  display: grid;
+  place-items: center;
+}
+
 .popup-container .popup {
   z-index: 30;
-}
-
-.popup-container .popup,
-.popup-container .layout {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  object-fit: contain;
+  max-height: 80vh;
 }
 
 .popup-container .layout {
-  z-index: 25;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: #000000dc;
-  width: 100vw;
-  height: 102vh;
-}
-
-.popup-container .popup {
-  height: 90vh;
-  width: auto;
+  z-index: 29;
 }
 
 .popup-img-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 80vh;
 }
 
 .popup-img-container img {
-  height: 100%;
+  max-width: 100%;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  border-radius: 2rem;
+  box-shadow: 0 0 4px #0000004d;
 }
 
-.btn-close-popup {
+.gallery-controls {
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+}
+
+.gallery-controls button {
   background: none;
   outline: none;
   border: none;
 
   font-size: 2rem;
   padding: 1rem 4rem;
-  border-top-left-radius: 2rem;
-  border-top-right-radius: 2rem;
   background-color: #fff;
   color: var(--base-dark);
   transition: 0.3s ease;
 }
 
-.btn-close-popup:hover {
+.gallery-controls button.btn-gallery-prev {
+  border-top-left-radius: 2rem;
+}
+
+.gallery-controls button.btn-gallery-next {
+  border-top-right-radius: 2rem;
+}
+
+.gallery-controls button:hover {
   background-color: var(--base-yellowish);
 }
 
@@ -870,6 +886,18 @@ nav.navbar {
 
   .section-offers__info-text {
     width: 100%;
+  }
+}
+
+/* 435px */
+@media only screen and (max-width: 27.1875em) {
+  .gallery-controls button {
+    font-size: 1.6rem;
+    padding: 1rem 2.6rem;
+  }
+
+  .gallery-controls button img {
+    width: 1.6rem;
   }
 }
 
