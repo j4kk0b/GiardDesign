@@ -3,7 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>adRespect - zadanie rekrutacyjne</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta
+      name="description"
+      content="GiardDesign - profesjonalne projektowanie ogrodów"
+    />
+    <meta
+      name="keywords"
+      content="Giard, GiardDesign, ogród, projektowanie ogrodu"
+    />
+
+    <title>GiardDesign - nowoczesna aranżacja Twojego ogrodu</title>
     <link
       defer
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
@@ -43,21 +71,23 @@
                 >Oferta</a
               >
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Oferta 1</a></li>
-                <li><a class="dropdown-item" href="#">Oferta 2</a></li>
+                <li><a class="dropdown-item" href="#oferty">Projekty</a></li>
                 <li>
-                  <a class="dropdown-item" href="#">Oferta 3</a>
+                  <a class="dropdown-item" href="#oferty">Wizualizacje</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#oferty">Realizacje</a>
                 </li>
               </ul>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">O firmie</a>
+              <a href="#o-firmie" class="nav-link">O firmie</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">Realizacje</a>
+              <a href="#realizacje" class="nav-link">Realizacje</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">Kontakt</a>
+              <a href="#kontakt" class="nav-link">Kontakt</a>
             </li>
             <li class="nav-item align-items-center">
               <img
@@ -104,64 +134,82 @@
             </div>
           </div>
 
-          <div class="col">
-            <div class="carousel-container mt-lg-0 mb-lg-0 mt-5 mb-4">
-              <div
-                id="carouselExampleControls"
-                class="carousel slide"
-                data-bs-ride="carousel"
-              >
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img
-                      class="d-block w-100"
-                      src="assets/slides/slide1.png"
-                      alt="Pierwszy slide przedstawiający ogród"
-                    />
-                  </div>
-                  <div class="carousel-item">
-                    <img
-                      class="d-block w-100"
-                      src="assets/slides/slide2.png"
-                      alt="Drugi slide przedstawiający ogród"
-                    />
-                  </div>
-                  <div class="carousel-item">
-                    <img
-                      class="d-block w-100"
-                      src="assets/slides/slide3.png"
-                      alt="Trzeci slide przedstawiający ogród"
-                    />
-                  </div>
+          <div class="carousel-container mt-lg-0 mb-lg-0 mt-5 mb-4">
+            <div
+              id="carouselExampleControls"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    class="d-block w-100"
+                    src="assets/slides/slide1.webp"
+                    alt="Pierwszy slide przedstawiający ogród"
+                  />
                 </div>
-                <div class="carousel-controls-container">
-                  <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#carouselExampleControls"
-                    data-bs-slide="prev"
-                  >
-                    <img src="assets/slides/arrow-left.png" alt="" />
-                    <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#carouselExampleControls"
-                    data-bs-slide="next"
-                  >
-                    <img src="assets/slides/arrow-right.png" alt="" />
-                    <span class="visually-hidden">Next</span>
-                  </button>
+                <div class="carousel-item">
+                  <img
+                    class="d-block w-100"
+                    src="assets/slides/slide2.webp"
+                    alt="Drugi slide przedstawiający ogród"
+                  />
                 </div>
+                <div class="carousel-item">
+                  <img
+                    class="d-block w-100"
+                    src="assets/slides/slide3.webp"
+                    alt="Trzeci slide przedstawiający ogród"
+                  />
+                </div>
+              </div>
+              <div class="carousel-controls-container carousel-container-inner">
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExampleControls"
+                  data-bs-slide="prev"
+                >
+                  <img src="assets/slides/arrow-left.png" alt="" />
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExampleControls"
+                  data-bs-slide="next"
+                >
+                  <img src="assets/slides/arrow-right.png" alt="" />
+                  <span class="visually-hidden">Next</span>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="carousel-controls-container carousel-container-outside">
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+        >
+          <img src="assets/slides/arrow-left.png" alt="" />
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+        >
+          <img src="assets/slides/arrow-right.png" alt="" />
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </section>
 
-    <section class="section-offers">
+    <section class="section-offers" id="oferty">
       <div class="container">
         <div class="row flex-column align-items-lg-start align-items-center">
           <div class="col col-lg-7 col-12 offset-lg-1 offset-0">
@@ -241,13 +289,13 @@
       </div>
     </section>
 
-    <section class="section-about p-xl-0 p-5">
+    <section class="section-about p-xl-0 p-5" id="o-firmie">
       <div class="container">
         <div class="row flex-xl-row flex-column-reverse align-items-center">
           <div class="col">
             <div class="section-about__img">
               <img
-                src="assets/photos/about.png"
+                src="assets/photos/about.webp"
                 alt="Zdjęcie poglądowe firmy"
               />
             </div>
@@ -268,7 +316,7 @@
                 minimalizm, geometria i elegancka prostota. Tworzymy ogrody
                 małoobsługowe, dostosowane do współczesnego trybu życia.
               </p>
-              <a href="#" class="section-about__btn"
+              <a href="#realizacje" class="section-about__btn"
                 >Poznaj nas bliżej <span>&rarr;</span></a
               >
             </div>
@@ -277,7 +325,7 @@
       </div>
     </section>
 
-    <section class="section-projects">
+    <section class="section-projects" id="realizacje">
       <div class="section-projects__header">
         <div class="container-fluid text-md-start text-center">
           <p>Realizacje</p>
@@ -444,7 +492,7 @@
       </div>
     </section>
 
-    <footer class="footer">
+    <footer class="footer" id="kontakt">
       <div class="container">
         <div class="row">
           <div class="col-10 offset-1">
