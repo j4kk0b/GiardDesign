@@ -64,11 +64,74 @@ a:visited {
   letter-spacing: -1%;
 }
 
+/* ANIMATIONS */
+@keyframes slide-from-left {
+  0% {
+    transform: translateX(-10rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-from-right {
+  0% {
+    transform: translateX(10rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-from-top {
+  0% {
+    transform: translateY(-10rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-from-bottom {
+  0% {
+    transform: translateY(10rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 /* ==================== */
 /* ==== NAVIGATION ====*/
 /* ==================== */
 nav.navbar {
   padding: 2.4rem 0;
+
+  opacity: 0;
+  transform: translateY(10rem);
+  animation: slide-from-top 1s forwards;
 }
 
 .navbar-collapse .navbar-nav {
@@ -127,6 +190,15 @@ nav.navbar {
   background-color: var(--base-yellowish);
   max-height: 80rem;
   position: relative;
+
+  opacity: 0;
+  animation: appear 1s 0.5s forwards;
+}
+
+.section-header__info {
+  transform: translateX(-10rem);
+  opacity: 0;
+  animation: slide-from-left 1s 0.5s forwards;
 }
 
 /* TITLE */
@@ -150,6 +222,10 @@ nav.navbar {
 /* BUTTONS */
 .section-header__btns {
   gap: 3.6rem;
+
+  opacity: 0;
+  transform: translate(-10rem);
+  animation: slide-from-bottom 0.5s 1.2s forwards;
 }
 
 .section-header__btns .btn-custom {
@@ -215,6 +291,10 @@ nav.navbar {
   margin-right: calc(-51vw + 50%);
   max-height: 80rem;
   overflow: hidden;
+
+  opacity: 0;
+  transform: translateX(10rem);
+  animation: slide-from-right 1s 1s forwards;
 }
 
 .carousel-controls-container {
@@ -224,6 +304,10 @@ nav.navbar {
   right: 0;
   gap: 2rem;
   background-color: #fff;
+
+  opacity: 0;
+  transform: translateX(10rem);
+  animation: slide-from-right 1s 1.3s forwards;
 }
 
 .carousel-container-inner {
@@ -256,15 +340,18 @@ nav.navbar {
 /* ==================== */
 .section-offers {
   background-color: var(--base-light);
+  padding-top: 12rem;
+  padding-bottom: 16rem;
+}
+
+.section-offers .container {
+  opacity: 0;
+  transform: translateY(10rem);
+  animation: slide-from-top 1s 2s forwards;
 }
 
 .section-offers .container .row {
   gap: 9.6rem;
-}
-
-.section-offers {
-  padding-top: 12rem;
-  padding-bottom: 16rem;
 }
 
 .section-offers__info-mini_title {
