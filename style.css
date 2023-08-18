@@ -342,6 +342,9 @@ nav.navbar {
   background-color: var(--base-light);
   padding-top: 12rem;
   padding-bottom: 16rem;
+
+  opacity: 0;
+  animation: appear 0.5s 1.5s forwards;
 }
 
 .section-offers .container {
