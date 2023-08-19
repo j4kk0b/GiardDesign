@@ -40,8 +40,15 @@ const currYear = new Date().getFullYear();
 
 yearContainer.innerHTML = currYear;
 
-// macy initalizaion - gallery
+// macy initalizaion - gallery || and loader delition
 window.onload = () => {
+  // delete loader
+  document.querySelector(".loading-screen").classList.add("loader-remove");
+  setTimeout(() => {
+    document.querySelector(".loading-screen").remove();
+  }, 1000);
+
+  // create gallery
   const macy = Macy({
     container: ".grid",
     trueOrder: true,
