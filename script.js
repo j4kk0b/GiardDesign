@@ -14,6 +14,26 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+// scroll animation
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries
+      .filter((e) => e.isIntersecting)
+      .forEach((entry) => {
+        entry.target.classList.add("scrolled");
+        observer.unobserve(entry.target);
+      });
+  },
+  {
+    threshold: 0.2,
+    marginRoot: "40px",
+  }
+);
+
+document.querySelectorAll(".section-to-scroll").forEach((e) => {
+  observer.observe(e);
+});
+
 // update year in footer
 const yearContainer = document.querySelector(".current-year");
 const currYear = new Date().getFullYear();
@@ -86,9 +106,10 @@ class Popup {
       this.imgs[this.currImgIndex].alt
     );
     document.querySelector("body").insertAdjacentHTML("afterbegin", markup);
-    this.isPopup = true;
     this.addEventListenerToRemovePopup();
     this.addEventListenersToControls();
+
+    document.querySelector("body").classList.add("stop-scroll");
   }
 
   createMarkup(src, alt) {
@@ -108,6 +129,7 @@ class Popup {
   }
 
   removePopup() {
+    document.querySelector("body").classList.remove("stop-scroll");
     document.querySelector(".popup-container").remove();
   }
 
