@@ -434,7 +434,7 @@ nav.navbar {
 }
 
 .section-offers.scrolled {
-  animation: appear 0.5s 1.5s forwards;
+  animation: appear 1s forwards;
 }
 
 .section-offers .container {
