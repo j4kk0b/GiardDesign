@@ -181,13 +181,15 @@ a:visited {
 }
 
 .loader {
-  width: 60px;
-  height: 60px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
-  border: 8px solid;
+  border: 16px solid;
   border-color: #e4e4ed;
   border-right-color: #1b5b31;
   animation: s2 1s infinite linear;
+
+  position: absolute;
 }
 
 @keyframes remove-loader {
