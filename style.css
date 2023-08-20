@@ -48,6 +48,7 @@ a:visited {
 h1,
 h2,
 p,
+button,
 a:link,
 a:visited {
   filter: drop-shadow(0 4px 4px #00000025);
