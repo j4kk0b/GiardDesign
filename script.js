@@ -143,7 +143,7 @@ class Popup {
   changeImgInPopUp() {
     const img = document.querySelector(".popup-img");
 
-    img.src = `assets/gallery/img${this.currImgIndex + 1}-min.webp`;
+    img.src = `assets/gallery/img${this.currImgIndex + 1}.webp`;
     img.alt = `Zdjęcie ${
       this.currImgIndex + 1
     } przedstawiające realizacje ogrodu`;

@@ -45,6 +45,14 @@ a:visited {
   color: var(--base-dark);
 }
 
+h1,
+h2,
+p,
+a:link,
+a:visited {
+  filter: drop-shadow(0 4px 4px #00000025);
+}
+
 /* ==================== */
 /* == HELPER CLASSES ==*/
 /* ==================== */
@@ -281,11 +289,6 @@ nav.navbar {
   animation: slide-from-left 1s 0.5s forwards;
 }
 
-.section-header__info h1,
-.section-about__info p {
-  filter: drop-shadow(0 4px 4px #00000025);
-}
-
 /* TITLE */
 .section-header h1 {
   font-size: 6rem;
@@ -485,7 +488,7 @@ nav.navbar {
 }
 
 .card-img {
-  width: 4.4rem;
+  width: 4.9rem;
   height: 4.4rem;
   margin-bottom: 3.2rem;
 }
