@@ -488,7 +488,7 @@ nav.navbar {
 }
 
 .card-img {
-  width: 4.9rem;
+  width: 4.4rem;
   height: 4.4rem;
   margin-bottom: 3.2rem;
 }
@@ -670,6 +670,7 @@ nav.navbar {
 
 .grid-item img {
   width: 100%;
+  height: auto;
   transition: 0.3s ease;
   cursor: pointer;
 }
